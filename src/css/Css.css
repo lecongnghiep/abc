@@ -1,0 +1,28 @@
+#bodyRouter{
+    border: 1px solid ;
+    width: 1000px;
+    padding-right: 40px;
+    margin: auto;
+}
+.header{
+    text-align: center;
+}
+.li-1, .li-2{
+    margin-right: 10px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+li{
+    text-align: center;
+    list-style: none;
+    border: 1px solid ;
+    border-radius: 5px;
+    padding: 5px;
+}
+.ct-home{
+    text-align: center;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
