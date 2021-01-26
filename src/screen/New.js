@@ -12,7 +12,7 @@ function Home() {
     // const task = {
     //     ...dataTask[index],
     //     content : value,
-    // }
+    // } 
     // const dataTemp = [...dataTask];
     // dataTemp.splice(index, 1, task);
     // setDataTask(dataTemp);

@@ -1,52 +1,52 @@
-import React, { useState }  from 'react';
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-import Task from '../component/Task.js';
 import "../styles/home.css";
+import Task from "../component/Task.js";
 import TodoStore from "../stores/TodoStore";
-export default function Doing() {
-    function deleteData() {
-        // const [dataTask, setDataTask] = useState(DATA);
-        const task = (value, index) => {
-          // const task = {
-          //     ...dataTask[index],
-          //     content : value,
-          // }
-          // const dataTemp = [...dataTask];
-          // dataTemp.splice(index, 1, task);
-          // setDataTask(dataTemp);
-        };
 
+import { observer } from "mobx-react";
+function Home() {
+  // const [dataTask, setDataTask] = useState(DATA);
+  const updateData = (value, index) => {
+    // const task = {
+    //     ...dataTask[index],
+    //     content : value,
+    // }
+    // const dataTemp = [...dataTask];
+    // dataTemp.splice(index, 1, task);
+    // setDataTask(dataTemp);
+  };
 
-    const deleteData = (value, index) => {
-        
-    }
+  const renderTask = () => {
+    return TodoStore.arrTaskList.map((item, index) => {
+      return (
+        <Task
+          // title={item.title}
+          // content={item.content}
+          // status={item.status}
+          {...item}
+          //  status={'cancel'}
+          // isLastItem={index === dataTask.length - 1}
+          isFirstItem={index === 0}
+          updateData={updateData}
+          index={index}
+          key={index}
+        />
+      );
+    });
+  };
 
-    const renderTask = () => {
-        return TodoStore.arrTaskList.map((item, index) => {
-        });
-      };
-
-    return(
-        <BrowserRouter>
-        <switch>
-          <Route path="/Doing">
-          <button
-            onClick={() =>
-              TodoStore.deleteData({
-                title: "Task nay la task moi",
-                content: "content",
-                status: "pending",
-              })
-            }
-          >
-            Delete
-          </button>
-          <button type="button" class="btn btn-danger">Delete</button>
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/Doing">
+          <button onClick={() => TodoStore.deleteTask()}>Delete</button>
           <ul>{renderTask()}</ul>
         </Route>
-        </switch>
-        </BrowserRouter>
-    )
-        
-}}
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default observer(Home);

@@ -38,7 +38,7 @@ class TodoStore {
         this.arrTaskList.push(task);
     }
     deleteTask(task) {
-        this.arrTaskList.pop(this.arrTaskList.indexOf(task),1);
+        this.arrTaskList.splice(this.arrTaskList.indexOf(task),1);
     }
 }
 
