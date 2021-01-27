@@ -40,10 +40,10 @@ function Home() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/Doing">
+        {/* <Route path="/Doing">
           <button onClick={() => TodoStore.deleteTask()}>Delete</button>
           <ul>{renderTask()}</ul>
-        </Route>
+        </Route> */}
       </Switch>
     </BrowserRouter>
   );

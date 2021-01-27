@@ -1,8 +1,10 @@
 #bodyRouter{
-    border: 1px solid ;
+    border: 2px solid rgb(210, 245, 13) ;
+    border-radius: 5px;
     width: 1000px;
     padding-right: 40px;
     margin: auto;
+    background-color: rgb(226, 244, 247);
 }
 .header{
     text-align: center;
@@ -20,9 +22,19 @@ li{
     border: 1px solid ;
     border-radius: 5px;
     padding: 5px;
+    
 }
 .ct-home{
     text-align: center;
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.btnNew-1, .btnNew-2{
+    margin-left:28%;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    color: red;
+    background-color: rgb(146, 236, 252);
+}
+
+

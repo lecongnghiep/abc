@@ -12,7 +12,7 @@ function Home() {
     // const task = {
     //     ...dataTask[index],
     //     content : value,
-    // } 
+    // }
     // const dataTemp = [...dataTask];
     // dataTemp.splice(index, 1, task);
     // setDataTask(dataTemp);
@@ -41,7 +41,7 @@ function Home() {
     <BrowserRouter>
       <Switch>
         <Route path="/new">
-          <button
+          <button className='btnNew-1'
             onClick={() =>
               TodoStore.addNewTask({
                 title: "Task nay la task moi",
@@ -52,23 +52,9 @@ function Home() {
           >
             Add neww task
           </button>
+          <button onClick={() => TodoStore.deleteTask()} className='btnNew-2'>Delete</button>
           <ul>{renderTask()}</ul>
         </Route>
-        <Route path="/new">
-          <button
-            onClick={() =>
-              TodoStore.addNewTask({
-                title: "Task nay la task moi",
-                content: "content",
-                status: "pending",
-              })
-            }
-          >
-            Add neww task
-          </button>
-          <ul>{renderTask()}</ul>
-        </Route>
-      
       </Switch>
     </BrowserRouter>
   );
